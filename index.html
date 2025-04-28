@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 4.1 - Drawing SVGs</title>
+</head>
+<body>
+
+<h1>My House and Garden</h1>
+
+<svg width="600" height="400" style="border: 1px solid black;">
+    <!-- House -->
+    <rect x="200" y="200" width="200" height="150" fill="lightblue" stroke="black" stroke-width="3" />
+    
+    <!-- Roof -->
+    <polygon points="200,200 400,200 300,100" fill="brown" stroke="black" stroke-width="3" />
+    
+    <!-- Door -->
+    <rect x="275" y="275" width="50" height="75" fill="saddlebrown" stroke="black" />
+    
+    <!-- Windows (to group later) -->
+    <g id="windows" fill="white" stroke="black" stroke-width="2">
+        <rect x="220" y="220" width="40" height="40" />
+        <rect x="340" y="220" width="40" height="40" />
+    </g>
+
+    <!-- Sun -->
+    <circle cx="500" cy="80" r="40" fill="gold" stroke="orange" stroke-width="3" />
+
+    <!-- Pathway -->
+    <path d="M 300 350 Q 320 380 300 400" stroke="grey" fill="none" stroke-width="5" />
+
+    <!-- Garden -->
+    <circle cx="100" cy="300" r="30" fill="green" />
+    <text x="70" y="300" fill="black">Tree</text>
+
+</svg>
+
+</body>
+</html>
