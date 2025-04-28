@@ -1,99 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Exercise 4.1: SVG House</title>
+    <meta charset="UTF-8" />
+    <title>Exercise 4.1: SVG House</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>My SVG House and Garden</h1>
 
-  <!-- 🎨 SVG Drawing -->
-  <svg width="600" height="400" style="border:1px solid black">
-    <!-- House body -->
-    <rect x="200" y="150" width="200" height="150" fill="#d2691e" />
+<h1>My SVG House and Garden</h1>
 
-    <!-- Roof -->
-    <polygon points="200,150 300,80 400,150" fill="#8b0000" stroke="#000" />
-
-    <!-- Door -->
-    <rect x="285" y="230" width="30" height="70" fill="#654321" stroke="#000" />
-    <!-- Sun rays -->
-    <line x1="520" y1="80" x2="480" y2="80" stroke="gold" stroke-width="2" />
-    <line x1="520" y1="50" x2="490" y2="20" stroke="gold" stroke-width="2" />
-    <line x1="550" y1="50" x2="550" y2="10" stroke="gold" stroke-width="2" />
-    <line x1="580" y1="50" x2="610" y2="20" stroke="gold" stroke-width="2" />
-    <line x1="580" y1="80" x2="620" y2="80" stroke="gold" stroke-width="2" />
-    <line x1="580" y1="110" x2="610" y2="140" stroke="gold" stroke-width="2" />
-    <line x1="550" y1="110" x2="550" y2="150" stroke="gold" stroke-width="2" />
-    <line x1="520" y1="110" x2="490" y2="140" stroke="gold" stroke-width="2" />
-
-    <!-- Move Sun -->
-    <circle cx="550" cy="80" r="30" fill="gold" />
+<!-- 🎨 SVG Drawing -->
+<svg width="600" height="400" style="border:1px solid black">
+  <g id="svg-drawing">
+    <!-- House Group -->
+    <g id="house">
+      <rect x="200" y="150" width="200" height="150" fill="#d2691e" />
+      <polygon points="200,150 300,80 400,150" fill="#8b0000" stroke="#000" />
+      <rect x="285" y="230" width="30" height="70" fill="#654321" stroke="#000" />
+      <rect x="370" y="100" width="20" height="40" fill="#4b3621" />
+    </g>
 
     <!-- Ground -->
     <rect x="0" y="300" width="600" height="100" fill="lightgreen" />
-    
-<!-- Windows -->
-<g transform="translate(3, 10)" fill="#add8e6" stroke="#000">
-  <rect x="220" y="170" width="40" height="40" />
-  <rect x="340" y="170" width="40" height="40" />
-</g>
+
+    <!-- Corridor -->
+    <rect x="285" y="300" width="315" height="20" fill="#a9a9a9" stroke="#000" />
+
+    <!-- Windows Group -->
+    <g id="windows" transform="translate(3, 10)" fill="#add8e6" stroke="#000">
+      <rect x="220" y="170" width="40" height="40" />
+      <rect x="340" y="170" width="40" height="40" />
+    </g>
+
+    <!-- Sun and Rays Group -->
+    <g id="sun">
+      <circle cx="550" cy="80" r="30" fill="gold" />
+      <line x1="520" y1="80" x2="480" y2="80" stroke="gold" stroke-width="2" />
+      <line x1="520" y1="50" x2="490" y2="20" stroke="gold" stroke-width="2" />
+      <line x1="550" y1="50" x2="550" y2="10" stroke="gold" stroke-width="2" />
+      <line x1="580" y1="50" x2="610" y2="20" stroke="gold" stroke-width="2" />
+      <line x1="580" y1="80" x2="620" y2="80" stroke="gold" stroke-width="2" />
+      <line x1="580" y1="110" x2="610" y2="140" stroke="gold" stroke-width="2" />
+      <line x1="550" y1="110" x2="550" y2="150" stroke="gold" stroke-width="2" />
+      <line x1="520" y1="110" x2="490" y2="140" stroke="gold" stroke-width="2" />
+    </g>
 
     <!-- Mango Tree -->
-    <g>
-      <!-- Tree trunk -->
+    <g id="tree">
       <rect x="100" y="200" width="20" height="100" fill="#8b4513" />
-      <!-- Tree foliage -->
       <circle cx="110" cy="180" r="40" fill="green" />
       <circle cx="90" cy="160" r="30" fill="green" />
       <circle cx="130" cy="160" r="30" fill="green" />
     </g>
 
-    <!-- Chimney-->
-    <rect x="370" y="100" width="20" height="40" fill="#4b3621" />
-
-    <!-- Corridor -->
-    <rect x="285" y="300" width="315" height="20" fill="#a9a9a9" stroke="#000" />
-
-    <!-- Blue Clouds -->
-    <circle cx="100" cy="80" r="30" fill="lightblue" />
-    <circle cx="130" cy="80" r="40" fill="lightblue" />
-    <circle cx="160" cy="80" r="30" fill="lightblue" />
-    <circle cx="400" cy="100" r="30" fill="lightblue" />
-    <circle cx="430" cy="100" r="40" fill="lightblue" />
-    <circle cx="460" cy="100" r="30" fill="lightblue" />
+    <!-- Blue Clouds Group -->
+    <g id="clouds">
+      <circle cx="100" cy="80" r="30" fill="lightblue" />
+      <circle cx="130" cy="80" r="40" fill="lightblue" />
+      <circle cx="160" cy="80" r="30" fill="lightblue" />
+      <circle cx="400" cy="100" r="30" fill="lightblue" />
+      <circle cx="430" cy="100" r="40" fill="lightblue" />
+      <circle cx="460" cy="100" r="30" fill="lightblue" />
+    </g>
 
     <!-- Boy Playing -->
-    <g>
-      <!-- Head -->
+    <g id="boy">
       <circle cx="500" cy="280" r="10" fill="#f1c27d" />
-      <!-- Body -->
       <line x1="500" y1="290" x2="500" y2="320" stroke="#000" stroke-width="2" />
-      <!-- Arms -->
       <line x1="500" y1="300" x2="490" y2="310" stroke="#000" stroke-width="2" />
       <line x1="500" y1="300" x2="510" y2="310" stroke="#000" stroke-width="2" />
-      <!-- Legs -->
       <line x1="500" y1="320" x2="490" y2="340" stroke="#000" stroke-width="2" />
       <line x1="500" y1="320" x2="510" y2="340" stroke="#000" stroke-width="2" />
-      <!-- Ball -->
       <circle cx="480" cy="330" r="8" fill="red" />
     </g>
 
     <!-- Rooster -->
-    <g transform="translate(50, 250)">
-      <!-- Body -->
+    <g id="rooster" transform="translate(50, 250)">
       <ellipse cx="0" cy="0" rx="15" ry="20" fill="brown" />
-      <!-- Head -->
       <circle cx="0" cy="-25" r="10" fill="brown" />
-      <!-- Beak -->
       <polygon points="-5,-30 5,-30 0,-35" fill="yellow" />
-      <!-- Comb -->
       <path d="M-5,-35 Q-10,-45 0,-45 Q10,-45 5,-35 Z" fill="red" />
-      <!-- Eye -->
       <circle cx="3" cy="-27" r="2" fill="black" />
-      <!-- Tail -->
       <path d="M15,-10 Q30,-30 20,-5 Q30,10 15,5 Z" fill="black" />
-      <!-- Legs -->
       <line x1="-5" y1="20" x2="-5" y2="40" stroke="orange" stroke-width="2" />
       <line x1="5" y1="20" x2="5" y2="40" stroke="orange" stroke-width="2" />
       <line x1="-5" y1="40" x2="-10" y2="45" stroke="orange" stroke-width="2" />
@@ -101,30 +90,30 @@
       <line x1="5" y1="40" x2="0" y2="45" stroke="orange" stroke-width="2" />
       <line x1="5" y1="40" x2="10" y2="45" stroke="orange" stroke-width="2" />
     </g>
-    
+
     <!-- Text -->
     <text x="250" y="20" font-family="Verdana" font-size="16" fill="black">My House SVG</text>
-  </svg>
+  </g>
+</svg>
 
-<!-- Add the div for the JavaScript -->
-<div></div>
+<!-- Screenshots Section -->
+<h2>Annotated SVG Screenshot</h2>
+<img src="images/annotated_diagram.png" alt="Annotated SVG" width="1500" />
 
-  <style>
-    img {
-      border: 2px solid black;
-      padding: 5px;
-    }
-  </style>
-  <h2>Annotated SVG Screenshot</h2>
-  <!-- 📸 Replace with your actual screenshot -->
-  <img src="images/annotated_diagram.png" alt="Annotated SVG" width="1500" />
+<h2>DOM Screenshot</h2>
+<img src="images/svg-dom-view.png" alt="SVG DOM View" width="1500" />
 
-  <h2>DOM Screenshot</h2>
-  <!-- 👀 Replace with screenshot of dev tools -->
-  <img src="images/svg-dom-view.png" alt="SVG DOM View" width="1500" />
+<!-- Scripts -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="d3script.js"></script>
 
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="d3script.js"></script>
+<!-- Inline styles -->
+<style>
+  img {
+    border: 2px solid black;
+    padding: 5px;
+  }
+</style>
 
 </body>
 </html>
